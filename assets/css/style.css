@@ -1,0 +1,348 @@
+/*
+ * Plugin Name:       Woocommerce Skeleton Loader
+ * Plugin URI:        https://codecanyon.net/user/teknofraction
+ *
+ * @link       https://codecanyon.net/user/teknofraction
+ * @since      1.0.0
+*/
+
+
+/* -------------------------------------------------
+*           CSS STRUCTURE
+* --------------------------------------------------
+ *
+ *    Table of Contents:
+ *
+ *    01. Hide Elements on Load
+ *    02. Grid View Skeleton
+ *    03. List View Skeleton
+ *    04. Product Page Skeleton
+ *        1. Product Image Section
+ *        2. Product Details Section
+ *        3. Product Page Grid Skeleton 
+ *    05. Animation
+ *
+ *
+ *
+* -----------------------------------------------*/
+
+
+:root {
+  --pslfree-gradient-color-1: #d9d9d9;
+  --pslfree-gradient-color-2: #f4f4f4;
+  --pslfree-gradient-color-3: #e3e3e3;
+  --pslfree-gradient-color-4: #e9e9e9;
+  --pslfree-gradiant: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgb(255 255 255 / 60%) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  --pslfree-grid-gradient: linear-gradient(
+      var(--pslfree-gradient-color-3) 100%,
+      transparent 0
+    ),
+    linear-gradient(var(--pslfree-gradient-color-3) 12px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 12px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0);
+
+  --pslfree-list-gradient: linear-gradient(
+      var(--pslfree-gradient-color-3) 250px,
+      transparent 0
+    ),
+    linear-gradient(var(--pslfree-gradient-color-3) 12px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 12px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 20px, transparent 0);
+
+  --pslfree-product-page-gradient-left: linear-gradient(
+      var(--pslfree-gradient-color-3) 100%,
+      transparent 0
+    ),
+    linear-gradient(var(--pslfree-gradient-color-3) 100%, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 100%, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 100%, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 100%, transparent 0);
+
+    --pslfree-product-page-gradient-right: linear-gradient(
+      var(--pslfree-gradient-color-3) 25px,
+      transparent 0
+    ),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 18px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 1px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 25px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 35px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 25px, transparent 0);
+  --pslfree-animation: pslfree_loading_01 1.5s infinite 0.2s;
+  --pslfree-background-size: 64rem 100%;
+}
+/* -------- END --------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------
+*  01. Hide Elements on Load
+-------------------------------------------------------------- */
+.pslfree-product div,
+.pslfree-product span,
+.pslfree-product a,
+.pslfree-product p,
+.pslfree-product h1,
+.pslfree-product h2,
+.pslfree-product h3,
+.pslfree-single-product .pslfree-single-product div,
+.pslfree-single-product .pslfree-single-product h1,
+.pslfree-single-product .pslfree-single-product h2,
+.pslfree-single-product .pslfree-single-product p,
+.pslfree-single-product .pslfree-single-product a,
+.pslfree-single-product .pslfree-single-product span,
+.pslfree-single-product .pslfree-single-product nav,
+.pslfree-single-product .entry-summary div,
+.pslfree-single-product .entry-summary h2,
+.pslfree-single-product .entry-summary h3,
+.pslfree-single-product .entry-summary h1,
+.pslfree-single-product .entry-summary p,
+.pslfree-single-product .entry-summary span,
+.pslfree-single-product .entry-summary nav,
+.pslfree-single-product span,
+.pslfree-single-product p,
+.pslfree-single-product .summary-before div,
+.pslfree-single-product .woocommerce-product-gallery div,
+.pslfree-single-product .woocommerce-product-gallery a,
+.pslfree-single-product .entry-summary .cart {
+  display: none !important;
+}
+.pslfree-product,
+.pslfree-single-product {
+  overflow: hidden;
+}
+/* -------- END --------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------
+*   02. Grid View Skeleton
+-------------------------------------------------------------- */
+.pslfree-product:before {
+  content: "";
+  display: block;
+  padding-top: calc(110% + 110px);
+  background-repeat: no-repeat;
+  background-image: var(--pslfree-grid-gradient);
+  background-size: 100% 68%, 50% 12px, 70% 16px, 50% 12px, 40% 16px;
+  background-position: left 0, left calc(68% + 20px), left calc(68% + 44px),
+    left calc(68% + 66px), left calc(68% + 92px);
+  background-position-x: center, center, center, center, center;
+}
+.pslfree-product:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background-image: var(--pslfree-gradiant);
+  background-size: 60% 100%;
+  background-position: -100% 0;
+  background-repeat: no-repeat;
+  animation: var(--pslfree-animation);
+}
+/* -------- END --------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------
+*   03. List View Skeleton
+-------------------------------------------------------------- */
+.list .pslfree-product:before {
+  padding-top: 250px;
+  background-image: linear-gradient(
+      var(--pslfree-gradient-color-3) 250px,
+      transparent 0
+    ),
+    linear-gradient(var(--pslfree-gradient-color-3) 12px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 12px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 14px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 16px, transparent 0),
+    linear-gradient(var(--pslfree-gradient-color-3) 20px, transparent 0);
+  background-size: 250px 100%, 150px 12px, 250px 16px, 150px 12px, 100% 14px,
+    100% 14px, 120px 16px, 200px 20px;
+  background-position: left 0, 270px 20px, 270px 44px, 270px 70px, 270px 105px,
+    270px 130px, 270px 170px, 270px 205px;
+}
+.list .pslfree-product:after {
+  transform: none;
+  background-image: var(--pslfree-gradiant);
+  animation: var(--pslfree-animation);
+  filter: unset;
+  background-position: unset;
+  background-size: 50% 100%;
+  left: -200%;
+  animation-duration: 2s;
+}
+/* -------- END --------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------
+*   04. Product Page Skeleton
+-------------------------------------------------------------- */
+
+
+    /* -------------- 1. Product Image Section ------------- */
+    .pslfree-single-product .entry-summary{
+      overflow: hidden;
+      position: relative;
+    }
+    .pslfree-single-product .entry-summary:after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      transform: rotate(45deg);
+      background-image: var(--pslfree-gradiant);
+      background-size: 60% 100%;
+      background-position: -100% 0;
+      background-repeat: no-repeat;
+      animation: pslfree_loading_01 1.5s infinite 0.2s;
+    }
+    .pslfree-single-product {
+      position: relative;
+      z-index: 1;
+    }
+    .pslfree-single-product .summary-before,
+    .pslfree-single-product .woocommerce-product-gallery {
+      order: initial;
+    }
+    .pslfree-single-product .entry-summary {
+      min-height: 400px;
+      overflow: hidden;
+    }
+    .pslfree-single-product > .row {
+      align-items: flex-start;
+    }
+    .pslfree-single-product > .row > div:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 15px;
+      background-repeat: no-repeat;
+    }
+    /*-------- END --------------------------------- */
+
+
+    /* -------------- 2. Product Details Section ------------- */
+    .pslfree-single-product .summary-before,
+    .pslfree-single-product .woocommerce-product-gallery {
+      height: 400px;
+    }
+    .pslfree-single-product .summary-before:before,
+    .pslfree-single-product .woocommerce-product-gallery:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0px;
+      left: 0;
+      z-index: 90;
+      right: 0;
+      margin: -2px 16px;
+      background-repeat: no-repeat;
+      background-image: var(--pslfree-product-page-gradient-left);
+      background-size: 100% calc(80% - 4px), calc(25% - 6px) calc(20% - 4px),
+        calc(25% - 6px) calc(20% - 4px), calc(25% - 6px) calc(20% - 4px),
+        calc(25% - 6px) calc(20% - 4px);
+      background-position: center top, left bottom, 33.3333% bottom, 66.6666% bottom,
+        right bottom;
+    }
+    .pslfree-single-product .woocommerce-product-gallery:before {
+      margin: 0;
+    }
+    .pslfree-single-product .entry-summary:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0px;
+      left: 0;
+      z-index: 90;
+      right: 0;
+      margin: -2px 16px;
+      background-image: var(--pslfree-product-page-gradient-right);
+      background-position: center top, left bottom, 33.3333% bottom, 66.6666% bottom,
+        right bottom;
+      background-size: 100% calc(80% - 4px), calc(25% - 6px) calc(20% - 4px),
+        calc(25% - 6px) calc(20% - 4px), calc(25% - 6px) calc(20% - 4px),
+        calc(25% - 6px) calc(20% - 4px);
+    }
+    /*-------- END --------------------------------- */
+
+
+    /* -------------- 3. Product Page Grid Skeleton ------------- */
+    .pslfree-single-product .pslfree-single-product:before {
+      content: "";
+      display: block;
+      padding-top: calc(110% + 110px);
+      background-repeat: no-repeat;
+      background-image: var(--pslfree-grid-gradient);
+      background-size: 100% 68%, 50% 12px, 70% 16px, 50% 12px, 40% 16px;
+      background-position: left 0, left calc(68% + 20px), left calc(68% + 44px),
+        left calc(68% + 66px), left calc(68% + 92px);
+      background-position-x: center, center, center, center, center;
+    }
+    .pslfree-single-product .pslfree-single-product:after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      background-image: var(--pslfree-gradiant);
+      background-size: 60% 100%;
+      background-position: -100% 0;
+      background-repeat: no-repeat;
+      animation: var(--pslfree-animation);
+    }
+    /* -------- END --------------------------------- */
+
+
+/* -------- END ------------------------------------------ */
+
+
+
+
+/* ---------------- 05. Animation ------------------- */
+@keyframes pslfree_loading_01 {
+  to {
+    background-position: 200% 0;
+  }
+}
+/* -------- END --------------------------------- */
