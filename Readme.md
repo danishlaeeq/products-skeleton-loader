@@ -6,6 +6,8 @@ Products Skeleton Loader uses core Woocommerce Hooks to add skeleton to reduces 
 ## Support Developer
 
 ### [Buy Me a Coffee](https://www.buymeacoffee.com/danishlaeeq)
+### [PayPal](https://www.paypal.com/paypalme/makstudioo/5usd)
+
 
 ## Description 
 
