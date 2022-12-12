@@ -1,4 +1,5 @@
 ## Products Skeleton Loader Free
+## [Download from WordPress.org ](https://wordpress.org/plugins/products-skeleton-loader-free/)
 
 Products Skeleton Loader Adds a Premium Skeleton Loading Animation to your website to attract your visitros / users.
 Products Skeleton Loader uses core Woocommerce Hooks to add skeleton to reduces page loading speed.
